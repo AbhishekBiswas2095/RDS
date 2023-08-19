@@ -1,0 +1,62 @@
+sudo apt-get update
+# For Sql-client
+sudo apt-get install mysql-client
+
+# For python and related frameworks
+
+sudo apt-get install python3
+sudo apt-get install python3-flask
+sudo apt-get install python3-pymysql
+sudo apt-get install python3-boto3
+
+# for running application
+sudo python3 Empapp.py
+
+
+STEPS
+
+1   Create the following resources
+    i)      RDS instance 
+    ii)     S3 Bucket
+    iii)    EC2-instance -----> Open port 3306 in SG and install Git to pull the code from GitHub Repository
+    iv)     IAM Role for EC2-instance -----> In order to access the S3 Bucket and the RDS database
+
+2   Connect to the EC2-instance and do the following:
+    - # sudo apt-get update
+    - # sudo apt-get install mysql-client
+
+3   Connect to the RDS from the EC2-instance
+    - # mysql -h <dns _of_the_RDS> -u <username> -p 
+    ENTER THE PASSWORD
+
+4   Create a Database and a Table in the RDS
+    # show databases;
+    # create database <database_name>;
+    # use <database_name>;
+    # create table <table_name> (
+        empid varchar(20),
+        fname varchar(20),
+        lname varchar(20),
+        pri_skill varchar(20),
+        location varchar(20));
+    # show tables;
+    # exit
+
+5   Configure the EC2-instance
+    # sudo apt-get install python3
+    # sudo apt-get install python3-pip
+    # pip3 install pymysql boto3
+    # pip3 install flask
+
+6   Clone the python code from the GitHub repository
+    # git clone <Repository URL>
+
+7   Run the python code
+    # sudo python3 Empapp.py
+
+
+8   Open the web page in the browser and fill the details
+
+9   log in to the database 
+    # use employees;
+    # select * from employees_details;

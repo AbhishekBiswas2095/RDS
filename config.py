@@ -1,0 +1,6 @@
+customhost = "my-database-01.cx5codal2rsa.us-west-2.rds.amazonaws.com"
+customuser = "abhishek"
+custompass = "abhishek"
+customdb = "employees"
+custombucket = "team-bucket-01"
+customregion = "us-west-2"
