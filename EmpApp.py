@@ -18,7 +18,7 @@ db_conn = connections.Connection(
 
 )
 output = {}
-table = 'my_employees'   # Manual Change
+table = 'employees_details'   # Manual Change
 
 
 @app.route("/", methods=['GET', 'POST'])
@@ -40,7 +40,7 @@ def AddEmp():
     location = request.form['location']
     emp_image_file = request.files['emp_image_file']
 
-    insert_sql = "INSERT INTO my_employees VALUES (%s, %s, %s, %s, %s)"  # Manual change
+    insert_sql = "INSERT INTO employees_details VALUES (%s, %s, %s, %s, %s)"  # Manual change
     cursor = db_conn.cursor()
 
     if emp_image_file.filename == "":
